@@ -40,7 +40,7 @@ app.get("/assignments/:month", (req, res) => {
   const url = URLS[month];
   fetchData(url)
     .then((assignments) => {
-      res.status(200).send(assignments);
+      res.status(200).json(assignments);
     })
     .catch((err) => res.send(404).send(err));
 });
