@@ -31,6 +31,10 @@ app.use(cors());
 
 app.listen(PORT, () => console.log(`its alive on http://localhost:${PORT}`));
 
+app.get("/", (req, res) => {
+  res.status(200).send("Hello World");
+});
+
 app.get("/assignments/:month", (req, res) => {
   const { month } = req.params;
   const url = URLS[month];
